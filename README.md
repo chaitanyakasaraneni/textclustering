@@ -11,7 +11,7 @@ after DBSCAN and assign noise points to the closest cluster.
 ### Data Description
 Input data (provided as training data) consists of 8580 text records in sparse format. No labels are provided.
 
-### My Implementation
+### My Implementation for the DBSCAN
 For the first step, I used the MiniBatchKMeans from sklearn.cluster.
 ```
 from sklearn.cluster import MiniBatchKMeans
@@ -53,4 +53,6 @@ for i in range(len(points)):
     if i not in core and i not in border:
         noise.append(i)   
 ```
-**Note:** You can use any implementation to get the better NMI and NMI is an external evaluation metric, you can use any internal evaluation metric such as  calinski_harabaz_score from sklearn.metrics.
+**Note:** 
+- You can use any implementation to get the better NMI and NMI is an external evaluation metric, you can use any internal evaluation metric such as  calinski_harabaz_score from sklearn.metrics.
+- In the bisecting k-means, I commented out the last part purposefully. While running that part of the code, make sure you close all other programs/applications as it may return a Memory Error.
