@@ -21,7 +21,7 @@ kmeans = MiniBatchKMeans(n_clusters=200,random_state = 0)
 kmeans.fit(csrL2Normalized)
 ```
 In the second step, I implemented my own version of DBSCAN, which is not so effificient and has an NMI (Normalized Mutual
-Information Score) of 0.3796
+Information Score) of 0.4223
 
 ```
 # Finding Core points
