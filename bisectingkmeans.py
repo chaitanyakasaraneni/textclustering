@@ -280,37 +280,35 @@ print("Dense:",denseMatrix)
 
 # In[13]:
 
-
+labels = bisecting_kmeans(denseMatrix, 7, 10)
+# write result to output file
+    outputFile = open("output.dat", "w")
+    for index in labels:
+        outputFile.write(str(index) +'\n')
+    outputFile.close()
 kValues = list()
 scores = list()
 
-for k in range(3, 22, 2):
-    labels = bisecting_kmeans(denseMatrix, k, 10)
-    print("Iterated",k)    
-    if (k == 7):
-    # write result to output file
-        outputFile = open("output.dat", "w")
-        for index in labels:
-            outputFile.write(str(index) +'\n')
-        outputFile.close()
-
-    score = calinski_harabaz_score(denseMatrix, labels)
-    kValues.append(k)
-    scores.append(score)
-    print ("For K= %d Calinski Harabaz Score is %f" %(k, score))
+# for k in range(3, 22, 2):
+#     labels = bisecting_kmeans(denseMatrix, k, 10)
+#     print("Iterated",k)    
+#     score = calinski_harabaz_score(denseMatrix, labels)
+#     kValues.append(k)
+#     scores.append(score)
+#     print ("For K= %d Calinski Harabaz Score is %f" %(k, score))
 
 
-# In[ ]:
+# # In[ ]:
 
 
-#get_ipython().run_line_magic('matplotlib', 'inline')
-import matplotlib.pyplot as plt
+# #get_ipython().run_line_magic('matplotlib', 'inline')
+# import matplotlib.pyplot as plt
 
-plt.plot(kValues, scores)
-plt.xticks(kValues, kValues)
-plt.xlabel('Number of Clusters k')
-plt.ylabel('Calinski and Harabaz Score')
-plt.title('Trend of Average Distance to Centroid/Diameter')
-plt.grid(linestyle='dotted')
-plt.savefig('plot.png')
-plt.show()
+# plt.plot(kValues, scores)
+# plt.xticks(kValues, kValues)
+# plt.xlabel('Number of Clusters k')
+# plt.ylabel('Calinski and Harabaz Score')
+# plt.title('Trend of Average Distance to Centroid/Diameter')
+# plt.grid(linestyle='dotted')
+# plt.savefig('plot.png')
+# plt.show()
