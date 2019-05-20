@@ -65,4 +65,3 @@ As stated above, DBSCAN doesn't perform well on very large datasets but performs
 
 ### References
 - [Prof. David's In-class Activity](https://github.com/davidanastasiu/CMPE-255-Sp19/blob/master/Activity-clustering-1.ipynb)
-- 
