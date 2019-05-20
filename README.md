@@ -62,3 +62,7 @@ for i in range(len(points)):
 
 ### Advantages
 As stated above, DBSCAN doesn't perform well on very large datasets but performs well on smaller ones. Whereas k-Means is a simple algorithm that perform well on smaller as well as larger datasets. Hence, this program helps to cluster large datasets (and you can try your own implementations, this is just a very basic one).
+
+### References
+- [Prof. David's In-class Activity](https://github.com/davidanastasiu/CMPE-255-Sp19/blob/master/Activity-clustering-1.ipynb)
+- 
